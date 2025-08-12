@@ -1,6 +1,6 @@
 package com.osp.vivatrip.exception;
 
-import com.osp.vivatrip.dto.request.ApiResponse;
+import com.osp.vivatrip.dto.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

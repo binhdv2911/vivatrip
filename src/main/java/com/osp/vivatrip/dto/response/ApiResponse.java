@@ -1,4 +1,4 @@
-package com.osp.vivatrip.dto.request;
+package com.osp.vivatrip.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
