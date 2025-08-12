@@ -1,18 +1,17 @@
 package com.osp.vivatrip.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDate;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserUpdateRequest {
-    String password;
-    String firstName;
-    String lastName;
-    LocalDate bod;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ApiResponse<T> {
+    int code = 1000;
+    String message;
+    T result;
 }

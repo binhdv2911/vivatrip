@@ -3,6 +3,8 @@ package com.osp.vivatrip.service;
 import com.osp.vivatrip.dto.request.UserCreationRequest;
 import com.osp.vivatrip.dto.request.UserUpdateRequest;
 import com.osp.vivatrip.entity.User;
+import com.osp.vivatrip.exception.AppException;
+import com.osp.vivatrip.exception.ErrorCode;
 import com.osp.vivatrip.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +15,12 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
     public User createUser(UserCreationRequest request){
         User user = new User();
+
+        if(userRepository.existsByUsername(request.getUsername()))
+            throw new AppException(ErrorCode.USER_EXISTED);
+
         user.setUsername(request.getUsername());
         user.setPassword(request.getPassword());
         user.setFirstName(request.getFirstName());
