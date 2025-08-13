@@ -6,7 +6,8 @@ public enum ErrorCode {
     USER_EXISTED(1003, "Username already exists"),
     USERNAME_INVALID(1004, "Username must be at least 3 characters"),
     PASSWORD_INVALID(1005, "Password must be at least 8 characters"),
-    USER_NOT_EXISTED(1006, "User not existed");
+    USER_NOT_EXISTED(1006, "User not existed"),
+    UNAUTHENTICATED(1007, "Unauthenticated");
     ErrorCode(int code, String message) {
         this.code = code;
         this.message = message;
